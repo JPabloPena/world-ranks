@@ -18,7 +18,18 @@ export function CountriesTable () {
         <h3>Area (km²)</h3>
         <h3>Region</h3>
       </div>
-      <div className='countires-table__row' />
+      {countries.map(country => (
+        <div className='countries-table__row' key={country.cca3}>
+          <img
+            src={country.flags.svg}
+            alt={`Flag of ${country.name.common}`}
+          />
+          <p>{country.name.common}</p>
+          <p>{country.population.toLocaleString()}</p>
+          <p>{country.area.toLocaleString()}</p>
+          <p>{country.region}</p>
+        </div>
+      ))}
     </div>
   )
 }

@@ -1,4 +1,19 @@
-.countries-table__header {
+.countries-table__header,
+.countries-table__row {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+  gap: 25px;
+  padding: 20px 0;
+  margin: 0 10px;
+}
+
+.countries-table__header {
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.countries-table__row img {
+  width: 75%;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
 }
