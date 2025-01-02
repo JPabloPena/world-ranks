@@ -12,8 +12,8 @@
 }
 
 .countries-table__row img {
-  width: 75%;
-  height: 50px;
+  width: 70px;
+  height: 45px;
   border-radius: 4px;
   object-fit: cover;
 }
