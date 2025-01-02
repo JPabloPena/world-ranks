@@ -5,11 +5,12 @@
   border: 3px solid var(--background-secondary);
   border-radius: 12px;
   padding: 30px;
+  margin-bottom: 70px;
 }
 
 .country-dashboard__content {
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 300px 1fr;
   gap: 25px;
   margin-top: 45px;
 }
