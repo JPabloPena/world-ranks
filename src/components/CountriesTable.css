@@ -8,7 +8,7 @@
 }
 
 .countries-table__header {
-  border-bottom: 1px solid var(--secondary-color);
+  border-bottom: 3px solid var(--background-secondary);
 }
 
 .countries-table__row img {
