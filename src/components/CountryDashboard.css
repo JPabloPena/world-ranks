@@ -1,6 +1,7 @@
 .country-dashboard {
-  background-color: var(--background-secondary);
-  width: 90%;
+  background-color: var(--background-primary);
+  width: 80%;
+  border: 3px solid var(--background-secondary);
   border-radius: 12px;
   padding: 30px;
 }
