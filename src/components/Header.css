@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .header-info {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.header form {
+  width: 45%;
+}
+
+.header input {
+  font-weight: 600;
+  color: var(--secondary-color);
+  padding: 14px 16px;
+  padding-left: 50px;
+  width: -webkit-fill-available;
+  border: none;
+  border-radius: 12px;
+  background: var(--background-search-bar) url('../assets/magnifying-glass.svg') no-repeat left 16px center;
+  background-size: 1.5rem;
+}
+
