@@ -1,18 +1,22 @@
 :root {
   --background-primary: #1B1D1F;
   --background-secondary: #282B30;
+  --background-search-bar: #282b30;
   --primary-color: #D2D5DA;
   --secondary-color: #6C727F;
   --accent-color: #4E80EE;
 }
 
 body {
-  font-family: "Be Vietnam Pro", Inter, system-ui, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: var(--background-primary);
   font-size: 32px;
+}
+
+body, input {
+  font-family: "Be Vietnam Pro", Inter, system-ui, Helvetica, Arial, sans-serif;
 }
 
 h2, h3, h4, p, ul, li, input {
