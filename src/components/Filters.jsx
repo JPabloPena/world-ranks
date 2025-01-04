@@ -7,9 +7,9 @@ export function Filters () {
     <div className='filters'>
       <section className='filters__sort-by'>
         <h3>Sort by</h3>
-        <select>
+        <select defaultValue='Population'>
           <option value='Name'>Name</option>
-          <option value='Population' selected>Population</option>
+          <option value='Population'>Population</option>
           <option value='Area'>Area</option>
         </select>
       </section>
