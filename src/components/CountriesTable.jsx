@@ -1,13 +1,9 @@
+import { CountriesContext } from '../contexts/countriesContext'
 import './CountriesTable.css'
-import { useEffect, useState } from 'react'
-import data from '../mocks/countries.json'
+import { useContext } from 'react'
 
 export function CountriesTable () {
-  const [countries, setCountries] = useState([])
-
-  useEffect(() => {
-    setCountries(data)
-  }, [])
+  const { countries } = useContext(CountriesContext)
 
   return (
     <div className='countries-table'>
