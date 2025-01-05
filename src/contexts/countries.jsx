@@ -6,7 +6,7 @@ export function CountriesProvider ({ children }) {
   const [countries, setCountries] = useState([])
   const [totalCountries, setTotalCountries] = useState(0)
 
-  const COUNTRIES_API = 'https://restcountries.com/v3.1/all?fields=flags,name,population,area,region,cca3'
+  const COUNTRIES_API = 'https://restcountries.com/v3.1/all?fields=flags,name,population,area,region,independent,unMember,cca3'
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -22,6 +22,8 @@ export function CountriesProvider ({ children }) {
 
     fetchCountries()
   }, [])
+
+  console.log(countries[1])
 
   return (
     <CountriesContext.Provider value={{ countries, totalCountries }}>
