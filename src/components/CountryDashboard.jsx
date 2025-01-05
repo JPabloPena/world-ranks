@@ -2,7 +2,7 @@ import './CountryDashboard.css'
 import { Header } from './Header'
 import { CountriesTable } from './CountriesTable'
 import { Filters } from './Filters'
-import { CountriesProvider } from '../contexts/countriesContext'
+import { CountriesProvider } from '../contexts/countries'
 
 export function CountryDashboard () {
   return (

@@ -1,4 +1,4 @@
-import { CountriesContext } from '../contexts/countriesContext'
+import { CountriesContext } from '../contexts/countries'
 import './CountriesTable.css'
 import { useContext } from 'react'
 

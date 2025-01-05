@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import './Header.css'
-import { CountriesContext } from '../contexts/countriesContext'
+import { CountriesContext } from '../contexts/countries'
 
 export function Header () {
   const { totalCountries } = useContext(CountriesContext)
