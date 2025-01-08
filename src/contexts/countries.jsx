@@ -1,10 +1,13 @@
 import { createContext, useState, useEffect } from 'react'
+import { useFilters } from '../hooks/useFilters'
 
 export const CountriesContext = createContext()
 
 export function CountriesProvider ({ children }) {
   const [countries, setCountries] = useState([])
+  const [filteredCountries, setFilteredCountries] = useState([])
   const [totalCountries, setTotalCountries] = useState(0)
+  const { filters, filterCountries } = useFilters()
 
   const COUNTRIES_API = 'https://restcountries.com/v3.1/all?fields=flags,name,population,area,region,independent,unMember,cca3'
 
@@ -14,7 +17,9 @@ export function CountriesProvider ({ children }) {
         const response = await fetch(COUNTRIES_API)
         const data = await response.json()
         setCountries(data)
-        setTotalCountries(data.length)
+        const initialFiltered = filterCountries(data)
+        setFilteredCountries(initialFiltered)
+        setTotalCountries(initialFiltered.length)
       } catch (error) {
         console.error('Error fetching countries', error)
       }
@@ -23,10 +28,14 @@ export function CountriesProvider ({ children }) {
     fetchCountries()
   }, [])
 
-  console.log(countries[1])
+  useEffect(() => {
+    const filteredCountries = filterCountries(countries)
+    setFilteredCountries(filteredCountries)
+    setTotalCountries(filteredCountries.length)
+  }, [filters])
 
   return (
-    <CountriesContext.Provider value={{ countries, totalCountries }}>
+    <CountriesContext.Provider value={{ countries: filteredCountries, totalCountries }}>
       {children}
     </CountriesContext.Provider>
   )
