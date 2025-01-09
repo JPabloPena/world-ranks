@@ -18,11 +18,12 @@ export function useFilters () {
 
   const filterCountries = (countries) => {
     const sortedCountries = sortCountries(countries)
-    const { status: { unMember, independent } } = filters
+    const { region, status: { unMember, independent } } = filters
     return sortedCountries.filter(country => {
       return (
         (unMember === false || country.unMember === true) &&
-        (independent === false || country.independent === true)
+        (independent === false || country.independent === true) &&
+        (region.length === 0 || region.includes(country.region))
       )
     })
   }
