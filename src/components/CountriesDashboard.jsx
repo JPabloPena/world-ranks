@@ -1,11 +1,11 @@
-import './CountryDashboard.css'
+import './CountriesDashboard.css'
 import { Header } from './Header'
 import { CountriesTable } from './CountriesTable'
 import { Filters } from './Filters'
 import { CountriesProvider } from '../contexts/countries'
 import { FiltersProvider } from '../contexts/filters'
 
-export function CountryDashboard () {
+export function CountriesDashboard () {
   return (
     <FiltersProvider>
       <CountriesProvider>

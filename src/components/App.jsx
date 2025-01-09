@@ -1,10 +1,10 @@
-import { CountryDashboard } from './CountryDashboard'
+import { CountriesDashboard } from './CountriesDashboard'
 
 function App () {
   return (
     <>
       <h1>World Ranks</h1>
-      <CountryDashboard />
+      <CountriesDashboard />
     </>
   )
 }
