@@ -2,7 +2,7 @@ import { useFilters } from '../hooks/useFilters'
 import './Filters.css'
 
 export function Filters () {
-  const REGIONS = ['Americas', 'Antartic', 'Africa', 'Asia', 'Europe', 'Oceania']
+  const REGIONS = ['Americas', 'Antarctic', 'Africa', 'Asia', 'Europe', 'Oceania']
 
   const { setFilters } = useFilters()
 
@@ -11,6 +11,26 @@ export function Filters () {
       ...prevState,
       sortBy: event.target.value
     }))
+  }
+
+  const handleClickRegion = event => {
+    if (event.target.classList.contains('filters__button--active')) {
+      setFilters(prevState => {
+        const newRegions = prevState.region.filter(region => region !== event.target.value)
+
+        return ({
+          ...prevState,
+          region: [...newRegions]
+        })
+      })
+    } else {
+      setFilters(prevState => ({
+        ...prevState,
+        region: [...prevState.region, event.target.value]
+      }))
+    }
+
+    event.target.classList.toggle('filters__button--active')
   }
 
   const handleChangeStatus = event => {
@@ -41,7 +61,7 @@ export function Filters () {
         <ul className='filters__list'>
           {REGIONS.map(region => (
             <li key={region}>
-              <button>{region}</button>
+              <button onClick={handleClickRegion} value={region}>{region}</button>
             </li>
           ))}
         </ul>
