@@ -16,11 +16,19 @@ export function useFilters () {
     })
   }
 
-  const filterCountries = (countries) => {
+  const filterCountries = countries => {
     const sortedCountries = sortCountries(countries)
-    const { region, status: { unMember, independent } } = filters
+    const { region, status: { unMember, independent }, search } = filters
+
     return sortedCountries.filter(country => {
+      const matchesSearch = search
+        ? country.name.common.toLowerCase().includes(search.toLowerCase()) ||
+        country.region.toLowerCase().includes(search.toLowerCase()) ||
+        country.subregion.toLowerCase().includes(search.toLowerCase())
+        : true
+
       return (
+        matchesSearch &&
         (unMember === false || country.unMember === true) &&
         (independent === false || country.independent === true) &&
         (region.length === 0 || region.includes(country.region))

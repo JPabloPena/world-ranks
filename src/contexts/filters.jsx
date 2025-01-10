@@ -9,7 +9,8 @@ export function FiltersProvider ({ children }) {
     status: {
       unMember: false,
       independent: false
-    }
+    },
+    search: ''
   })
 
   return (
