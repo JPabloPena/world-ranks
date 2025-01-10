@@ -9,7 +9,7 @@ export function CountriesProvider ({ children }) {
   const [totalCountries, setTotalCountries] = useState(0)
   const { filters, filterCountries } = useFilters()
 
-  const COUNTRIES_API = 'https://restcountries.com/v3.1/all?fields=flags,name,population,area,region,independent,unMember,cca3'
+  const COUNTRIES_API = 'https://restcountries.com/v3.1/all?fields=flags,name,population,area,region,subregion,independent,unMember,cca3'
 
   useEffect(() => {
     const fetchCountries = async () => {
