@@ -24,11 +24,11 @@ h2, h3, h4, p, ul, li, input {
   padding: 0;
 }
 
-h1, p {
+h1, p, tr {
   color: var(--primary-color);
 }
 
-h2, h3, h4 {
+h2, h3, h4, th {
   color: var(--secondary-color);
 }
 

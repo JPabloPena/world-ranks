@@ -1,14 +1,29 @@
-.countries-table__header,
-.countries-table__row {
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
-  gap: 25px;
-  padding: 20px 0;
-  margin: 0 10px;
-  align-items: center;
+.countries-table-container {
+  overflow-x: auto;
+}
+
+.countries-table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.countries-table__row td {
+  padding: 20px 24px 20px 0;
+}
+
+.countries-table__header th {
+  padding: 0 20px 15px 0px;
 }
 
 .countries-table__header {
+  font-size: 1rem;
+}
+
+.countries-table__row {
+  font-size: 1.2rem;
+}
+
+.countries-table__header th {
   border-bottom: 3px solid var(--background-secondary);
 }
 
