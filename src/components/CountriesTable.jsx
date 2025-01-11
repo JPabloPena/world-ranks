@@ -26,7 +26,7 @@ export function CountriesTable () {
                   alt={`Flag of ${country.name.common}`}
                 />
               </td>
-              <td>{country.name.common}</td>
+              <td className='countries-table__name'>{country.name.common}</td>
               <td>{country.population.toLocaleString()}</td>
               <td>{country.area.toLocaleString()}</td>
               <td>{country.region}</td>

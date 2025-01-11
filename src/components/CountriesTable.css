@@ -5,6 +5,7 @@
 .countries-table {
   border-collapse: collapse;
   text-align: left;
+  width: 100%;
 }
 
 .countries-table__row td {
@@ -32,4 +33,8 @@
   height: 45px;
   border-radius: 4px;
   object-fit: cover;
+}
+
+.countries-table__name {
+  max-width: 120px;
 }
