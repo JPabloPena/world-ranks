@@ -8,24 +8,21 @@
   width: 100%;
 }
 
-.countries-table__row td {
-  padding: 20px 24px 20px 0;
-}
-
-.countries-table__header th {
-  padding: 0 20px 15px 0px;
-}
-
 .countries-table__header {
   font-size: 1rem;
 }
 
-.countries-table__row {
-  font-size: 1.2rem;
+.countries-table__header th {
+  padding: 0 20px 15px 0px;
+  border-bottom: 3px solid var(--background-secondary);
 }
 
-.countries-table__header th {
-  border-bottom: 3px solid var(--background-secondary);
+.countries-table__row td {
+  padding: 20px 24px 20px 0;
+}
+
+.countries-table__row {
+  font-size: 1.2rem;
 }
 
 .countries-table__row img {
@@ -33,6 +30,11 @@
   height: 45px;
   border-radius: 4px;
   object-fit: cover;
+}
+
+.countries-table__row:hover {
+  cursor: pointer;
+  background: var(--background-secondary);
 }
 
 .countries-table__name {
