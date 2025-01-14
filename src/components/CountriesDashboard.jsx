@@ -4,6 +4,7 @@ import { CountriesTable } from './CountriesTable'
 import { Filters } from './Filters'
 import { CountriesProvider } from '../contexts/countries'
 import { FiltersProvider } from '../contexts/filters'
+import { Pagination } from './Pagination'
 
 export function CountriesDashboard () {
   return (
@@ -15,6 +16,7 @@ export function CountriesDashboard () {
             <Filters />
             <CountriesTable />
           </div>
+          <Pagination />
         </main>
       </CountriesProvider>
     </FiltersProvider>
