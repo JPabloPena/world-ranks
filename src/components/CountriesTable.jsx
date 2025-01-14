@@ -1,9 +1,23 @@
+import { createPortal } from 'react-dom'
 import { CountriesContext } from '../contexts/countries'
 import './CountriesTable.css'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
+import { CountryDetails } from './CountryDetails'
 
 export function CountriesTable () {
-  const { countries } = useContext(CountriesContext)
+  const { filteredCountries } = useContext(CountriesContext)
+  const [showModal, setShowModal] = useState(false)
+  const [selectedCountry, setSelectedCountry] = useState({})
+
+  const onClickCountry = country => {
+    setSelectedCountry(country)
+    setShowModal(true)
+  }
+
+  const onCloseCountryDetails = () => {
+    setSelectedCountry({})
+    setShowModal(false)
+  }
 
   return (
     <div className='countries-table-container'>
@@ -18,8 +32,12 @@ export function CountriesTable () {
           </tr>
         </thead>
         <tbody>
-          {countries.map(country => (
-            <tr className='countries-table__row' key={country.cca3}>
+          {filteredCountries.map(country => (
+            <tr
+              className='countries-table__row'
+              key={country.cca3}
+              onClick={() => onClickCountry(country)}
+            >
               <td>
                 <img
                   src={country.flags.svg}
@@ -34,6 +52,10 @@ export function CountriesTable () {
           ))}
         </tbody>
       </table>
+      {showModal && createPortal(
+        <CountryDetails country={selectedCountry} onClose={onCloseCountryDetails} />,
+        document.body
+      )}
     </div>
   )
 }
