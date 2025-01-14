@@ -8,6 +8,8 @@ export function CountriesProvider ({ children }) {
   const [filteredCountries, setFilteredCountries] = useState([])
   const [totalCountries, setTotalCountries] = useState(0)
   const { filters, filterCountries } = useFilters()
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage] = useState(10)
 
   const COUNTRIES_API = 'https://restcountries.com/v3.1/all?fields=flags,name,population,area,region,subregion,independent,unMember,cca3,capital,languages,currencies,continents,borders'
 
@@ -34,8 +36,20 @@ export function CountriesProvider ({ children }) {
     setTotalCountries(filteredCountries.length)
   }, [filters])
 
+  const lastPostIndex = currentPage * postsPerPage
+  const firstPostIndex = lastPostIndex - postsPerPage
+  const currentPosts = filteredCountries.slice(firstPostIndex, lastPostIndex)
+
   return (
-    <CountriesContext.Provider value={{ countries, filteredCountries, totalCountries }}>
+    <CountriesContext.Provider value={{
+      countries,
+      filteredCountries: currentPosts,
+      totalCountries,
+      postsPerPage,
+      currentPage,
+      setCurrentPage
+    }}
+    >
       {children}
     </CountriesContext.Provider>
   )
