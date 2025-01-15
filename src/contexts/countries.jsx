@@ -34,6 +34,7 @@ export function CountriesProvider ({ children }) {
     const filteredCountries = filterCountries(countries)
     setFilteredCountries(filteredCountries)
     setTotalCountries(filteredCountries.length)
+    setCurrentPage(1)
   }, [filters])
 
   const lastPostIndex = currentPage * postsPerPage

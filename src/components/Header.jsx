@@ -5,7 +5,7 @@ import { FiltersContext } from '../contexts/filters'
 import debounce from 'just-debounce-it'
 
 export function Header () {
-  const { totalCountries, setCurrentPage } = useContext(CountriesContext)
+  const { totalCountries } = useContext(CountriesContext)
   const { setFilters } = useContext(FiltersContext)
 
   const debounceSearch = useCallback(
@@ -14,7 +14,6 @@ export function Header () {
         ...prevState,
         search
       }))
-      setCurrentPage(1)
     }
     , 500),
     [setFilters]
