@@ -1,5 +1,5 @@
 import './Header.css'
-import { useCallback, useContext } from 'react'
+import { useCallback, useContext, useRef } from 'react'
 import { CountriesContext } from '../contexts/countries'
 import { FiltersContext } from '../contexts/filters'
 import debounce from 'just-debounce-it'
@@ -7,6 +7,8 @@ import debounce from 'just-debounce-it'
 export function Header () {
   const { totalCountries } = useContext(CountriesContext)
   const { setFilters } = useContext(FiltersContext)
+
+  const inputRef = useRef(null)
 
   const debounceSearch = useCallback(
     debounce(search => {
@@ -24,11 +26,24 @@ export function Header () {
     debounceSearch(newSearch)
   }
 
+  const handleOnSubmit = event => {
+    event.preventDefault()
+
+    const countriesTable = document.getElementById('countries-table-container')
+    if (countriesTable) {
+      countriesTable.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    if (inputRef.current) {
+      inputRef.current.blur()
+    }
+  }
+
   return (
     <header className='header'>
       <p className='header-info'>Found {totalCountries} countries</p>
-      <form>
-        <input onChange={handleChangeSearch} placeholder='Search by Name, Region, Subregion' />
+      <form onSubmit={handleOnSubmit}>
+        <input ref={inputRef} onChange={handleChangeSearch} placeholder='Search by Name, Region, Subregion' />
       </form>
     </header>
   )

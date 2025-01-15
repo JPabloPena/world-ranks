@@ -20,7 +20,7 @@ export function CountriesTable () {
   }
 
   return (
-    <div className='countries-table-container'>
+    <div id='countries-table-container' className='countries-table-container'>
       <table className='countries-table'>
         <thead>
           <tr className='countries-table__header'>
