@@ -86,7 +86,7 @@
 
 @media (hover: none) and (max-width: 768px) {
   .filters__region ul li button:hover {
-    color: inherit;
-    background-color: inherit;
+    color: var(--secondary-color);
+    background-color: var(--background-primary);
   }
 }
