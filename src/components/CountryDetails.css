@@ -96,10 +96,15 @@ body.no-scroll {
 .country-details-info {
   box-sizing: border-box;
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 45% 45%;
   justify-content: space-between;
   padding: 20px;
   border-top: 2px solid var(--background-secondary);
+}
+
+.country-details-info > p {
+  text-align: end;
 }
 
 .country-details-neighbors {
