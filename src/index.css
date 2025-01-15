@@ -40,6 +40,19 @@ p, select, label, button {
   font-size: 1.2rem;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color)
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+}
+
 #root {
   display: flex;
   flex-direction: column;
