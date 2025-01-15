@@ -3,11 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://jpablopena.github.io/world-ranks/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "standard --fix",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "just-debounce-it": "3.2.0",
@@ -16,6 +19,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react-swc": "3.5.0",
+    "gh-pages": "^6.3.0",
     "standard": "17.1.2",
     "vite": "6.0.3"
   },
