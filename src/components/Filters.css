@@ -76,3 +76,17 @@
   cursor: pointer;
   border: 3px solid var(--background-secondary);
 }
+
+@media (hover: none) and (max-width: 1024px) {
+  .filters__region ul li button:hover {
+    color: var(--secondary-color);
+    background-color: var(--background-primary);
+  }
+}
+
+@media (hover: none) and (max-width: 768px) {
+  .filters__region ul li button:hover {
+    color: inherit;
+    background-color: inherit;
+  }
+}
