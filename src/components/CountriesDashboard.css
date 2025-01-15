@@ -14,3 +14,26 @@
   gap: 25px;
   margin-top: 45px;
 }
+
+@media (max-width: 1024px) {
+  .country-dashboard {
+    width: 85%;
+  }
+
+  .country-dashboard__content {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .country-dashboard {
+    width: -webkit-fill-available;
+    margin: 20px;
+  }
+
+  .country-dashboard__content {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+}

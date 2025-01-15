@@ -19,6 +19,15 @@ body, input {
   font-family: "Be Vietnam Pro", Inter, system-ui, Helvetica, Arial, sans-serif;
 }
 
+body input:focus,
+body select:focus {
+  outline: 1px solid var(--accent-color);
+}
+
+h1 {
+  text-align: center;
+}
+
 h2, h3, h4, p, ul, li, input {
   margin: 0;
   padding: 0;

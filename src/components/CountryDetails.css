@@ -130,3 +130,23 @@ body.no-scroll {
   object-fit: cover;
   border-radius: 4px;
 }
+
+@media (max-width: 768px) {
+  .country-details-container {
+    width: 90%;
+  }
+
+  .country-details-close-icon {
+    width: 20px;
+  }
+
+  .country-details-flag {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
+  .country-details-population-area {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
