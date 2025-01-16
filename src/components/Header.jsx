@@ -22,7 +22,7 @@ export function Header () {
   )
 
   const handleChangeSearch = event => {
-    const newSearch = event.target.value
+    const newSearch = event.target.value.trim()
     debounceSearch(newSearch)
   }
 
