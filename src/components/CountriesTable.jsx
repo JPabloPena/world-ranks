@@ -5,7 +5,7 @@ import { useContext, useState } from 'react'
 import { CountryDetails } from './CountryDetails'
 
 export function CountriesTable () {
-  const { filteredCountries } = useContext(CountriesContext)
+  const { filteredCountries, loading, totalCountries, setCurrentPage } = useContext(CountriesContext)
   const [showModal, setShowModal] = useState(false)
   const [selectedCountry, setSelectedCountry] = useState({})
 
@@ -19,8 +19,17 @@ export function CountriesTable () {
     setShowModal(false)
   }
 
-  return (
-    <div id='countries-table-container' className='countries-table-container'>
+  const renderContent = () => {
+    if (loading) {
+      return <p>Loading...</p>
+    }
+
+    if (totalCountries === 0) {
+      setCurrentPage(0)
+      return <p>No results were found.</p>
+    }
+
+    return (
       <table className='countries-table'>
         <thead>
           <tr className='countries-table__header'>
@@ -52,6 +61,12 @@ export function CountriesTable () {
           ))}
         </tbody>
       </table>
+    )
+  }
+
+  return (
+    <div id='countries-table-container' className='countries-table-container'>
+      {renderContent()}
       {showModal && createPortal(
         <CountryDetails country={selectedCountry} onClose={onCloseCountryDetails} />,
         document.body
