@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom'
 import { CountriesContext } from '../contexts/countries'
 import './CountriesTable.css'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { CountryDetails } from './CountryDetails'
 
 export function CountriesTable () {
@@ -19,13 +19,18 @@ export function CountriesTable () {
     setShowModal(false)
   }
 
+  useEffect(() => {
+    if (totalCountries === 0) {
+      setCurrentPage(0)
+    }
+  }, [totalCountries])
+
   const renderContent = () => {
     if (loading) {
       return <p>Loading...</p>
     }
 
     if (totalCountries === 0) {
-      setCurrentPage(0)
       return <p>No results were found.</p>
     }
 
