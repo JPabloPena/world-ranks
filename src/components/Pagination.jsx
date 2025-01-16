@@ -26,7 +26,7 @@ export function Pagination () {
     <div className='pagination'>
       <button
         onClick={() => handleClickLeftButton(currentPage)}
-        disabled={currentPage === 1}
+        disabled={currentPage <= 1}
       ><img src={chevronLeft} />
       </button>
       <p>{currentPage} of {lastPage}</p>
