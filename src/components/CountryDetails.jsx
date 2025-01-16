@@ -77,19 +77,21 @@ export function CountryDetails ({ country, onClose }) {
           <h3>Neighbouring Countries</h3>
           <div>
             {
-              country.borders.map(border => {
-                const neighbor = countries.find(country =>
-                  country.cca3 === border
-                )
-                return neighbor
-                  ? (
-                    <div key={border} className='country-details-neighbor'>
-                      <img src={neighbor.flags.svg} className='country-details-neighbor-flag' />
-                      <p className='country-details-neighbor-name'>{neighbor.name.common}</p>
-                    </div>
+              country.borders.length < 1
+                ? (<p>{country.name.common} does not has neighbouring countries. </p>)
+                : (country.borders.map(border => {
+                    const neighbor = countries.find(country =>
+                      country.cca3 === border
                     )
-                  : null
-              })
+                    return neighbor
+                      ? (
+                        <div key={border} className='country-details-neighbor'>
+                          <img src={neighbor.flags.svg} className='country-details-neighbor-flag' />
+                          <p className='country-details-neighbor-name'>{neighbor.name.common}</p>
+                        </div>
+                        )
+                      : null
+                  }))
             }
           </div>
         </div>
