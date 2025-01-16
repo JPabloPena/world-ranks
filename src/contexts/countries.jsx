@@ -10,19 +10,23 @@ export function CountriesProvider ({ children }) {
   const { filters, filterCountries } = useFilters()
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(10)
+  const [loading, setLoading] = useState(false)
 
   const COUNTRIES_API = 'https://restcountries.com/v3.1/all?fields=flags,name,population,area,region,subregion,independent,unMember,cca3,capital,languages,currencies,continents,borders'
 
   useEffect(() => {
     const fetchCountries = async () => {
       try {
+        setLoading(true)
         const response = await fetch(COUNTRIES_API)
         const data = await response.json()
         setCountries(data)
         const initialFiltered = filterCountries(data)
         setFilteredCountries(initialFiltered)
         setTotalCountries(initialFiltered.length)
+        setLoading(false)
       } catch (error) {
+        setLoading(false)
         console.error('Error fetching countries', error)
       }
     }
@@ -48,7 +52,8 @@ export function CountriesProvider ({ children }) {
       totalCountries,
       postsPerPage,
       currentPage,
-      setCurrentPage
+      setCurrentPage,
+      loading
     }}
     >
       {children}
