@@ -1,10 +1,10 @@
-import './Header.css'
+import './SearchBar.css'
 import { useCallback, useContext, useRef } from 'react'
 import { CountriesContext } from '../contexts/countries'
 import { FiltersContext } from '../contexts/filters'
 import debounce from 'just-debounce-it'
 
-export function Header () {
+export function SearchBar () {
   const { totalCountries } = useContext(CountriesContext)
   const { setFilters } = useContext(FiltersContext)
 
@@ -40,8 +40,8 @@ export function Header () {
   }
 
   return (
-    <header className='header'>
-      <p className='header-info'>Found {totalCountries} countries</p>
+    <header className='search-bar'>
+      <p className='search-bar-info'>Found {totalCountries} countries</p>
       <form onSubmit={handleOnSubmit}>
         <input ref={inputRef} onChange={handleChangeSearch} placeholder='Search by Name, Region, Subregion' />
       </form>

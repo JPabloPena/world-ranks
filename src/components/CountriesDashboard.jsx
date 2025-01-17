@@ -1,5 +1,5 @@
 import './CountriesDashboard.css'
-import { Header } from './Header'
+import { SearchBar } from './SearchBar'
 import { CountriesTable } from './CountriesTable'
 import { Filters } from './Filters'
 import { CountriesProvider } from '../contexts/countries'
@@ -11,7 +11,7 @@ export function CountriesDashboard () {
     <FiltersProvider>
       <CountriesProvider>
         <main className='country-dashboard'>
-          <Header />
+          <SearchBar />
           <div className='country-dashboard__content'>
             <Filters />
             <CountriesTable />
