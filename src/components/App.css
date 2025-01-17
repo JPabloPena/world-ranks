@@ -1,10 +1,13 @@
 .app-title {
   margin-top: 40px;
-  margin-bottom: 0;
+  margin-bottom: 15px;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
 }
 
 .app-desc {
   margin-bottom: 40px;
   font-size: 1.5rem;
   text-align: center;
+  text-wrap: balance;
 }
