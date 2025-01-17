@@ -1,0 +1,85 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0px;
+  border-top: 1px solid var(--background-secondary);
+  width: 100%;
+  gap: 30px;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.footer-dev-challenges {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+
+.footer-dev-challenges img:hover {
+  transition: all .3s ease;
+  transform: scale(1.05);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 1.2rem;
+}
+
+.footer-social a {
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 5px;
+}
+
+.footer-social img {
+  width: 30px;
+}
+
+.footer-social img svg {
+  color: var(--primary-color);
+}
+
+.footer-social a:hover {
+  transition: all .3s ease;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 20px;
+    padding: 40px 0;
+    gap: 40px;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-info p {
+    text-align: center;
+  }
+
+  .footer-dev-challenges img {
+    height: 25px;
+  }
+}
+
+@media (max-width: 350px) {
+  .footer-dev-challenges {
+    flex-direction: column;
+  }
+  .footer-dev-challenges img {
+    height: 25px;
+  }
+}
