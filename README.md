@@ -1,10 +1,10 @@
 <!-- PROJECT LOGO -->
-<span align="center">
+<p align="center">
   <img src="https://github.com/JPabloPena/world-ranks/blob/main/images/world-ranks-screenshot-main.jpeg" width="500" />
-</span>
-<span align="center">
+</p>
+<p align="center">
   <img src="https://github.com/JPabloPena/world-ranks/blob/main/images/world-ranks-screenshot-card.jpeg" width="500" />
-</span>
+</p>
 
 <div align="center">
 <h3 align="center">World Ranks</h3>
