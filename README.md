@@ -1,9 +1,9 @@
 <!-- PROJECT LOGO -->
 <span align="center">
-  <img src="https://github.com/JPabloPena/world-ranks/blob/master/world-ranks-screenshot-main.jpeg" width="500" />
+  <img src="https://github.com/JPabloPena/world-ranks/blob/main/images/world-ranks-screenshot-main.jpeg" width="500" />
 </span>
 <span align="center">
-  <img src="https://github.com/JPabloPena/world-ranks/blob/master/world-ranks-screenshot-card.jpeg" width="500" />
+  <img src="https://github.com/JPabloPena/world-ranks/blob/main/images/world-ranks-screenshot-card.jpeg" width="500" />
 </span>
 
 <div align="center">
